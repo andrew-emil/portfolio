@@ -47,11 +47,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
-			<body className={`${inter.variable} antialiased min-h-screen`}>
+			<body className={`${inter.variable} antialiased min-h-screen flex flex-col`}>
 				<CustomParticles />
 				<Navbar />
 
-				<main className="flex flex-col shrink p-12 gap-2 sm:p-0 sm:m-0 md:p-0 md:m-0">
+				<main className="flex flex-col shrink p-10 gap-2 sm:p-0 md:p-0 m-auto min-w-3/4">
 					<CustomCard>{children}</CustomCard>
 				</main>
 				<Footer />

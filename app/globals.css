@@ -3,7 +3,7 @@
 :root {
 	--background: #090113;
 	--foreground: #e0e0e0;
-	--accent-primary: #8a2be2; /* Keep your accent colors for the purple glow */
+	--accent-primary: #8a2be2;
 	--accent-secondary: #c084fc;
 	--border-radius: 0.75rem;
 	--font-family: "Inter", sans-serif;
@@ -78,7 +78,7 @@ body {
 	position: relative;
 	overflow: hidden;
 	z-index: 1;
-
+	cursor:pointer;
 	color: var(--button-primary-text);
 	border: 1px solid var(--button-primary-border);
 	border-radius: var(--border-radius);
@@ -124,19 +124,6 @@ body {
 .button-primary * {
 	position: relative;
 	z-index: 1;
-}
-
-.button-secondary {
-	background: var(--button-secondary-bg);
-	color: var(--button-secondary-text);
-	border: 1px solid var(--button-secondary-border);
-	border-radius: var(--border-radius);
-	padding: 0.5rem 1.5rem;
-	transition: background 0.2s;
-}
-
-.button-secondary:hover {
-	background: var(--button-secondary-hover-bg);
 }
 
 h1 {

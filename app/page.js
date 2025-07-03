@@ -15,7 +15,7 @@ const { socialLinks } = personalInfo;
 
 export default function Home() {
 	return (
-		<div className="w-full max-w-5xl mx-auto py-8 px-2 md:px-8 flex flex-col gap-8 sm:m-0">
+		<div className="w-full max-w-5xl mx-auto py-8 px-2 md:px-8 flex flex-col gap-8 sm:m-0 -z-20">
 			{/* Header Section */}
 			<header className="flex flex-col items-center text-center gap-2">
 				<div className="relative h-32 w-32 md:h-40 md:w-40 mb-2 rounded-xl overflow-hidden border-4 border-[var(--accent-primary)] shadow-lg">

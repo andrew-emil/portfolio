@@ -18,7 +18,7 @@ export default function Navbar() {
 	return (
 		<nav
 			className="
-                flex items-center justify-between max-w-screen-md mx-auto
+                flex items-center justify-between max-w-screen-md mx-auto gap-4 w-1/2
                 h-[var(--navbar-height)]
                 px-6 py-3
                 bg-[rgba(30,30,40,0.7)]
@@ -26,10 +26,10 @@ export default function Navbar() {
                 border border-transparent
                 rounded-2xl
                 shadow-lg
-                mt-4
+                my-4
                 md:relative md:flex-row md:justify-between md:items-center
-                md:rounded-2xl md:px-10 md:py-4 md:h-[var(--navbar-height)]
-				sm:mx-auto z-100
+                md:rounded-2xl md:px-10 md:py-4 md:h-[var(--navbar-height)] md:w-full 
+				sm:mx-auto z-[100] sm:w-full
                 "
 			style={{
 				borderImage: "linear-gradient(90deg, #a78bfa 0%, #f472b6 100%) 1",
@@ -38,7 +38,7 @@ export default function Navbar() {
 			{/* Brand/Logo */}
 			<div className="flex items-center gap-2 select-none">
 				<span className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 tracking-tight drop-shadow-lg">
-					{/* You can replace this with an <img> or SVG icon if you have a logo */}
+					
 					My Portfolio
 				</span>
 			</div>
@@ -95,7 +95,7 @@ export default function Navbar() {
 
 			{/* Mobile Menu Dropdown */}
 			{menuOpen && (
-				<div className="absolute top-full left-0 w-full flex flex-col items-center bg-[rgba(30,30,40,0.97)] shadow-lg rounded-b-2xl py-4 md:hidden z-40 animate-fade-in z-100">
+				<div className="absolute top-full left-0 w-full flex flex-col items-center bg-[rgba(30,30,40,0.97)] shadow-lg rounded-b-2xl py-4 md:hidden animate-fade-in">
 					{navLinks.map((link) => {
 						const isActive =
 							link.href === "/"
