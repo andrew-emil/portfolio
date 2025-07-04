@@ -1,9 +1,17 @@
-import { fetchOneProject } from "@/app/_apiCalls/projectsApis";
+import { fetchOneProject, fetchProjects } from "@/app/_apiCalls/projectsApis";
 import ReviewCarousel from "@/app/_components/ReviewCarousel";
 import { convertImage } from "@/app/_utils/convertImage";
 import Image from "next/image";
 import Link from "next/link";
 import Typography from "@mui/material/Typography";
+
+export async function generateStaticParams() {
+	const projects = await fetchProjects();
+
+	const ids = projects.map((projects) => ({ id: projects._id }));
+
+	return ids;
+}
 
 export default async function ProjectPage({ params }) {
 	const project = await fetchOneProject(params.id);
@@ -28,7 +36,9 @@ export default async function ProjectPage({ params }) {
 				<h2 className="text-3xl md:text-5xl font-bold text-[var(--accent-primary)] mb-2">
 					{name}
 				</h2>
-				<Typography variant="body2" className="text-base text-gray-500">{category}</Typography>
+				<Typography variant="body2" className="text-base text-gray-500">
+					{category}
+				</Typography>
 			</header>
 			<div className="flex flex-col md:flex-row gap-8 items-start">
 				{imageUrl && (
@@ -44,7 +54,9 @@ export default async function ProjectPage({ params }) {
 					</div>
 				)}
 				<div className="flex-1 flex flex-col gap-4">
-					<Typography variant="body1" className="text-lg text-[var(--foreground)] whitespace-pre-line">
+					<Typography
+						variant="body1"
+						className="text-lg text-[var(--foreground)] whitespace-pre-line">
 						{description}
 					</Typography>
 					<div className="flex flex-wrap gap-2 mt-2">

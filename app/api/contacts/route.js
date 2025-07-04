@@ -5,6 +5,7 @@ import { createContactSchema } from "@/app/_utils/validationSchemas";
 import { headers } from "next/headers";
 import { validateClient } from "@/app/_utils/validateClient";
 
+
 export async function GET(request) {
 	const header = await headers();
 	const validation = validateClient(header);
