@@ -19,7 +19,6 @@ export default function Navbar() {
 		<nav
 			className="
                 flex flex-col md:flex-row items-center justify-between max-w-screen-md mx-auto gap-2 md:gap-4
-                w-full
                 h-auto md:h-[var(--navbar-height)]
                 px-2 sm:px-4 md:px-10 py-2 md:py-4
                 bg-[rgba(30,30,40,0.7)]
@@ -28,9 +27,10 @@ export default function Navbar() {
                 shadow-lg
                 my-2 md:my-4
                 rounded-none md:rounded-2xl
-                sm:mx-auto sm:w-full
+                sm:mx-auto
                 relative
                 z-30
+				min-w-[240px]
                 "
 			style={{
 				borderImage: "linear-gradient(90deg, #a78bfa 0%, #f472b6 100%) 1",

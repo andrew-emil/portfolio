@@ -7,12 +7,12 @@ export const CustomCard = styled(Card)(() => ({
 	background: "rgba(255, 255, 255, 0.10)",
 	border: "0.5px solid #fff",
 	borderRadius: "10px",
-	padding: "2rem",
 	boxShadow: "0 4px 24px 0 rgba(0,0,0,0.10)",
 	backdropFilter: "blur(8px)",
 	WebkitBackdropFilter: "blur(8px)",
 	maxWidth: "100%",
 	boxSizing: "border-box",
+	margin: "auto"
 }));
 
 export const CustomIconButton = styled(IconButton)(() => ({

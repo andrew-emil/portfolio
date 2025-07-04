@@ -51,13 +51,15 @@ export default function ContactForm() {
 		e.preventDefault();
 		setTouched({ name: true, email: true, subject: true, message: true });
 		validate();
+		setErrors({ fullName: "", email: "", subject: "", message: "" })
+		console.log(errors, values)
 		if (
 			Object.values(errors).every((x) => x === "") &&
 			Object.values(values).every((x) => x !== "")
 		) {
 			setLoading(true);
 			try {
-				await sendContactMessage(values);
+				const res = await sendContactMessage(values);
 
 				toast.success("message sent successfully!");
 				setValues({ fullName: "", email: "", subject: "", message: "" });

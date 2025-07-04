@@ -3,6 +3,7 @@ import ReviewCarousel from "@/app/_components/ReviewCarousel";
 import { convertImage } from "@/app/_utils/convertImage";
 import Image from "next/image";
 import Link from "next/link";
+import Typography from "@mui/material/Typography";
 
 export default async function ProjectPage({ params }) {
 	const project = await fetchOneProject(params.id);
@@ -27,7 +28,7 @@ export default async function ProjectPage({ params }) {
 				<h2 className="text-3xl md:text-5xl font-bold text-[var(--accent-primary)] mb-2">
 					{name}
 				</h2>
-				<p className="text-base text-gray-500">{category}</p>
+				<Typography variant="body2" className="text-base text-gray-500">{category}</Typography>
 			</header>
 			<div className="flex flex-col md:flex-row gap-8 items-start">
 				{imageUrl && (
@@ -43,9 +44,9 @@ export default async function ProjectPage({ params }) {
 					</div>
 				)}
 				<div className="flex-1 flex flex-col gap-4">
-					<p className="text-lg text-[var(--foreground)] whitespace-pre-line">
+					<Typography variant="body1" className="text-lg text-[var(--foreground)] whitespace-pre-line">
 						{description}
-					</p>
+					</Typography>
 					<div className="flex flex-wrap gap-2 mt-2">
 						{technologies.map((tech) => (
 							<span
