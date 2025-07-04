@@ -11,7 +11,7 @@ export default function CvButton() {
 	async function downloadCV() {
 		setLoading(true);
 		try {
-			const res = await fetch(`${DOMAIN}/api/uploads`, { method: "GET" });
+			const res = await fetch("/api/uploads", { method: "GET" });
 			if (!res.ok) {
 				throw Error("Error: something went wrong when downloading CV");
 			}

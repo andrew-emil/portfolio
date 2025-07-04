@@ -45,15 +45,7 @@
 }
 
 body {
-	background-color: var(
-		--background
-	); /* Use the new dark background variable */
-	background-image: radial-gradient(
-		circle at 50% 0%,
-		rgba(138, 43, 226, 0.1) 0%,
-		/* A very subtle purple glow from the top center */ transparent 70%
-			/* Fade to transparent */
-	);
+	background-color: var(--background);
 	color: var(--foreground);
 	font-family: var(--font-family);
 	font-size: var(--body-size);

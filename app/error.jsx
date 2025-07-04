@@ -9,7 +9,7 @@ const ErrorPage = ({ error, reset }) => {
 				<div className="text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-2">
 					Something went wrong
 				</div>
-				<h2 className="text-[var(--foreground)] my-3 text-xl">
+				<h2 className="text-foreground my-3 text-xl">
 					Error Message: <span className="text-pink-400">{error.message}</span>
 				</h2>
 				<button onClick={() => reset()} className="button-primary mt-4">

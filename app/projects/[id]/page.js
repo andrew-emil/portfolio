@@ -1,13 +1,11 @@
-import { DOMAIN } from "@/app/_utils/constants";
-import Link from "next/link";
-import Image from "next/image";
-import { convertImage } from "@/app/_utils/convertImage";
+import { fetchOneProject } from "@/app/_apiCalls/projectsApis";
 import ReviewCarousel from "@/app/_components/ReviewCarousel";
+import { convertImage } from "@/app/_utils/convertImage";
+import Image from "next/image";
+import Link from "next/link";
 
 export default async function ProjectPage({ params }) {
-	const { id } = await params;
-	const res = await fetch(`${DOMAIN}/api/projects/${id}`, { method: "GET" });
-	const project = await res.json();
+	const project = await fetchOneProject(params.id);
 
 	const {
 		name,
@@ -20,7 +18,6 @@ export default async function ProjectPage({ params }) {
 		review = [],
 	} = project || {};
 
-	
 	const imageUrl =
 		thumbnail && thumbnail.data ? convertImage(thumbnail.data) : null;
 

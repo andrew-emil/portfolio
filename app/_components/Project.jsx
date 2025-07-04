@@ -22,19 +22,16 @@ export default function Project({ project }) {
 							/>
 							{/* Eye icon overlay */}
 							<span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30">
-								<VisibilityIcon
-									fontSize="medium"
-									sx={{color: "purple"}}
-								/>
+								<VisibilityIcon fontSize="medium" sx={{ color: "purple" }} />
 							</span>
 						</>
 					)}
 				</div>
-				<div className="p-4 flex flex-col flex-1">
-					<h3 className="text-lg font-semibold mb-1 text-gray-900 dark:text-white">
+				<div className="p-3 sm:p-4 flex flex-col flex-1">
+					<h3 className="text-base sm:text-lg font-semibold mb-1 text-gray-900 dark:text-white">
 						{project.name}
 					</h3>
-					<span className="text-sm text-gray-500 dark:text-gray-400">
+					<span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
 						{project.category}
 					</span>
 				</div>

@@ -1,14 +1,18 @@
-"use client"
+"use client";
 
-import { Card, styled, IconButton } from "@mui/material";
+import { Card, IconButton, styled } from "@mui/material";
 
 export const CustomCard = styled(Card)(() => ({
-	backgroundColor: "transparent",
-	background: "rgb(0 0 0 / 0.20)",
+	backgroundColor: "rgba(255, 255, 255, 0.10)",
+	background: "rgba(255, 255, 255, 0.10)",
 	border: "0.5px solid #fff",
 	borderRadius: "10px",
 	padding: "2rem",
-	boxShadow: "none",
+	boxShadow: "0 4px 24px 0 rgba(0,0,0,0.10)",
+	backdropFilter: "blur(8px)",
+	WebkitBackdropFilter: "blur(8px)",
+	maxWidth: "100%",
+	boxSizing: "border-box",
 }));
 
 export const CustomIconButton = styled(IconButton)(() => ({
