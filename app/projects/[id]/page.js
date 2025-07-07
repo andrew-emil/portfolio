@@ -7,14 +7,13 @@ import Typography from "@mui/material/Typography";
 
 export async function generateStaticParams() {
 	const projects = await fetchProjects();
-
 	const ids = projects.map((projects) => ({ id: projects._id }));
-
 	return ids;
 }
 
 export default async function ProjectPage({ params }) {
-	const project = await fetchOneProject(params.id);
+	const id = await params.id
+	const project = await fetchOneProject(id);
 
 	const {
 		name,

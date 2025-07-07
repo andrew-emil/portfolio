@@ -9,11 +9,19 @@ function convertVideo(buffer) {
 	return `data:video/mp4;base64,${btoa(binaryString)}`;
 }
 
+function getVideoBuffer(data) {
+	if (data?.buffer) return data.buffer;
+	if (data?.data) return data.data;
+	return data;
+}
+
 export default function ReviewCarousel({ reviews }) {
 	const [current, setCurrent] = useState(0);
 	if (!reviews.length) return null;
 
 	const goTo = (idx) => setCurrent((idx + reviews.length) % reviews.length);
+
+	console.log("Video data object:", reviews[current].data);
 
 	return (
 		<div className="w-full max-w-2xl mx-auto flex flex-col items-center gap-2">
@@ -29,7 +37,7 @@ export default function ReviewCarousel({ reviews }) {
 					/>
 				) : (
 					<video
-						src={convertVideo(reviews[current].data)}
+						src={convertVideo(getVideoBuffer(reviews[current].data))}
 						controls
 						className="w-full h-full object-contain bg-black"
 					/>
