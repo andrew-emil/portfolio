@@ -18,7 +18,10 @@ export default function Navbar() {
 	return (
 		<nav
 			className="
-                flex flex-col md:flex-row items-center justify-between max-w-screen-md mx-auto gap-2 md:gap-4
+                flex flex-col md:flex-row items-center justify-between
+                w-full md:max-w-screen-md
+                md:mx-auto
+                gap-2 md:gap-4
                 h-auto md:h-[var(--navbar-height)]
                 px-2 sm:px-4 md:px-10 py-2 md:py-4
                 bg-[rgba(30,30,40,0.7)]

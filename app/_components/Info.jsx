@@ -7,11 +7,13 @@ export default function Info({ icon, socialObject, link }) {
 			<Link href={link} target="_blank" rel="noopener noreferrer">
 				<CustomIconButton>{icon}</CustomIconButton>
 			</Link>
-			<div className="flex justify-start items-start gap-2 flex-col truncate">
+			<div className="flex justify-start items-start gap-2 flex-col w-full">
 				<p className="text-sm text-[var(--card-border)] capitalize">
 					{socialObject.name}
 				</p>
-				<p className="text-sm text-foreground">{socialObject.url}</p>
+				<p className="text-sm text-foreground truncate w-40">
+					{socialObject.url}
+				</p>
 			</div>
 		</div>
 	);

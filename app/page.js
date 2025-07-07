@@ -223,7 +223,7 @@ export default function Home() {
 					<Box
 						sx={{
 							display: "flex",
-							flexDirection: { xs: "column", sm: "row" },
+							flexDirection:"row",
 							justifyContent: "center",
 							alignItems: "center",
 							gap: { xs: 1, sm: 2 },

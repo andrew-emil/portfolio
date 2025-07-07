@@ -50,7 +50,8 @@ export default function EducationExperienceTimeline() {
 					sx={{
 						display: "flex",
 						alignItems: "center",
-						mb: { xs: 4, sm: 6, md: 8 },
+						mb: { xs: 2, sm: 6, md: 8 },
+						width: { xs: "100%" },
 					}}>
 					<School
 						sx={{
@@ -179,8 +180,9 @@ export default function EducationExperienceTimeline() {
 					sx={{
 						display: "flex",
 						alignItems: "center",
-						mb: { xs: 4, sm: 6, md: 8 },
-						mt: { xs: 8, sm: 12, md: 16 },
+						mb: { xs: 2, sm: 6, md: 8 },
+						mt: { xs: 4, sm: 8, md: 12 },
+						width: { xs: "100%" },
 					}}>
 					<Work
 						sx={{
@@ -348,7 +350,7 @@ export default function EducationExperienceTimeline() {
 					sx={{
 						position: "absolute",
 						right: { xs: 1, sm: 2 },
-						bottom: { xs: 2, sm: 3, md:4 },
+						bottom: { xs: 2, sm: 3, md: 4 },
 						zIndex: 20,
 					}}>
 					<CvButton />

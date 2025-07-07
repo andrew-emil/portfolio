@@ -52,7 +52,7 @@ export default function RootLayout({ children }) {
 				<CustomParticles />
 				<Navbar />
 
-				<main className="flex flex-col md:p-4 gap-2 lg:p-8 p-0 m-auto min-w-3/4 sm:w-3/4 sm:p-2 w-3/4 min-w-[240px]">
+				<main className="flex flex-col md:p-4 gap-2 lg:p-8 p-0 m-auto min-w-3/4 sm:w-3/4 sm:p-2 w-3/4 layout">
 					<CustomCard>{children}</CustomCard>
 				</main>
 				<Footer />

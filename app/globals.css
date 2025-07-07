@@ -70,7 +70,7 @@ body {
 	position: relative;
 	overflow: hidden;
 	z-index: 1;
-	cursor:pointer;
+	cursor: pointer;
 	color: var(--button-primary-text);
 	border: 1px solid var(--button-primary-border);
 	border-radius: var(--border-radius);
@@ -138,6 +138,7 @@ h3 {
 h4 {
 	color: var(--foreground);
 }
+
 h6 {
 	color: var(--foreground);
 	display: flex;
@@ -154,9 +155,11 @@ hr {
 	padding: 1rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 40rem) {
 	.layout {
 		padding: 1rem;
+		margin: 0;
+		width: 100%;
 	}
 	h1 {
 		font-size: 2.25rem;

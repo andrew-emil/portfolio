@@ -2,17 +2,20 @@
 
 import { Card, IconButton, styled } from "@mui/material";
 
-export const CustomCard = styled(Card)(() => ({
+export const CustomCard = styled(Card)(({ theme }) => ({
 	backgroundColor: "rgba(255, 255, 255, 0.10)",
 	background: "rgba(255, 255, 255, 0.10)",
-	border: "0.5px solid #fff",
+	border: "none",
+	[theme.breakpoints.up("sm")]: {
+		border: "0.5px solid #fff",
+	},
 	borderRadius: "10px",
 	boxShadow: "0 4px 24px 0 rgba(0,0,0,0.10)",
 	backdropFilter: "blur(8px)",
 	WebkitBackdropFilter: "blur(8px)",
 	maxWidth: "100%",
 	boxSizing: "border-box",
-	margin: "auto"
+	margin: "auto",
 }));
 
 export const CustomIconButton = styled(IconButton)(() => ({

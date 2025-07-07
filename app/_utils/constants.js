@@ -1,5 +1,5 @@
-const PRODUCTION_DOMAIN = "https://portfolio-project.vercel.app";
-const DEVELOPMENT_DOMAIN = "http://localhost:3000";
+const PRODUCTION_DOMAIN = process.env.PRODUCTION_DOMAIN;
+const DEVELOPMENT_DOMAIN = process.env.DEVELOPMENT_DOMAIN;
 
 export const DOMAIN =
 	process.env.NODE_ENV === "production"
