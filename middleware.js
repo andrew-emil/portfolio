@@ -1,12 +1,11 @@
 import { NextResponse } from "next/server";
+import { DOMAIN } from "./app/_utils/constants";
 
 export function middleware(request) {
-	// Handle CORS for API routes
-	if (request.nextUrl.pathname.startsWith("/api/")) {
+	if (request.nextUrl.pathname.includes("/api/")) {
 		const response = NextResponse.next();
 
-		// Add CORS headers
-		response.headers.set("Access-Control-Allow-Origin", "*");
+		response.headers.set("Access-Control-Allow-Origin", DOMAIN);
 		response.headers.set(
 			"Access-Control-Allow-Methods",
 			"GET, POST, PUT, DELETE, OPTIONS"
@@ -16,7 +15,6 @@ export function middleware(request) {
 			"Content-Type, Authorization"
 		);
 
-		// Handle preflight requests
 		if (request.method === "OPTIONS") {
 			return new NextResponse(null, { status: 200, headers: response.headers });
 		}
