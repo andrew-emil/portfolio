@@ -2,25 +2,59 @@
 
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
 import { Box, CircularProgress, TextField } from "@mui/material";
-import { useState } from "react";
+import { useReducer } from "react";
 import { Bounce, toast, ToastContainer } from "react-toastify";
 import { sendContactMessage } from "@/app/_apiCalls/contactApis";
 
-export default function ContactForm() {
-	const [values, setValues] = useState({
+const initialState = {
+	values: {
 		fullName: "",
 		email: "",
 		subject: "",
 		message: "",
-	});
-	const [errors, setErrors] = useState({});
-	const [touched, setTouched] = useState({});
-	const [loading, setLoading] = useState(false);
+	},
+	errors: {},
+	touched: {},
+	loading: false,
+};
+
+function reducer(state, action) {
+	switch (action.type) {
+		case "SET_VALUE":
+			return {
+				...state,
+				values: { ...state.values, [action.name]: action.value },
+			};
+		case "SET_ERROR":
+			return {
+				...state,
+				errors: { ...state.errors, ...action.errors },
+			};
+		case "SET_TOUCHED":
+			return {
+				...state,
+				touched: { ...state.touched, ...action.touched },
+			};
+		case "SET_LOADING":
+			return {
+				...state,
+				loading: action.loading,
+			};
+		case "RESET":
+			return initialState;
+		default:
+			return state;
+	}
+}
+
+export default function ContactForm() {
+	const [state, dispatch] = useReducer(reducer, initialState);
+	const { values, errors, touched, loading } = state;
 
 	const validate = (fieldValues = values) => {
 		let temp = { ...errors };
 		if ("fullName" in fieldValues)
-			temp.fullName = fieldValues.name ? "" : "Full name is required.";
+			temp.fullName = fieldValues.fullName ? "" : "Full name is required.";
 		if ("email" in fieldValues) {
 			temp.email = fieldValues.email
 				? /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(fieldValues.email)
@@ -32,42 +66,44 @@ export default function ContactForm() {
 			temp.subject = fieldValues.subject ? "" : "Subject is required.";
 		if ("message" in fieldValues)
 			temp.message = fieldValues.message ? "" : "Message is required.";
-		setErrors({ ...temp });
+		dispatch({ type: "SET_ERROR", errors: temp });
 	};
 
 	const handleInputChange = (e) => {
 		const { name, value } = e.target;
-		setValues({ ...values, [name]: value });
+		dispatch({ type: "SET_VALUE", name, value });
 		validate({ [name]: value });
 	};
 
 	const handleBlur = (e) => {
 		const { name } = e.target;
-		setTouched({ ...touched, [name]: true });
+		dispatch({ type: "SET_TOUCHED", touched: { [name]: true } });
 		validate({ [name]: values[name] });
 	};
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		setTouched({ name: true, email: true, subject: true, message: true });
+		dispatch({ type: "SET_LOADING", loading: true });
+		dispatch({
+			type: "SET_TOUCHED",
+			touched: { fullName: true, email: true, subject: true, message: true },
+		});
 		validate();
-		setErrors({ fullName: "", email: "", subject: "", message: "" })
-		console.log(errors, values)
 		if (
 			Object.values(errors).every((x) => x === "") &&
 			Object.values(values).every((x) => x !== "")
 		) {
-			setLoading(true);
 			try {
-				const res = await sendContactMessage(values);
-
+				await sendContactMessage(values);
 				toast.success("message sent successfully!");
-				setValues({ fullName: "", email: "", subject: "", message: "" });
+				dispatch({ type: "RESET" });
 			} catch (e) {
 				toast.error(e.message);
 			} finally {
-				setLoading(false);
+				dispatch({ type: "SET_LOADING", loading: false });
 			}
+		} else {
+			dispatch({ type: "SET_LOADING", loading: false });
 		}
 	};
 
@@ -96,7 +132,7 @@ export default function ContactForm() {
 	};
 
 	return (
-		<form onSubmit={handleSubmit} autoComplete="off">
+		<form onSubmit={handleSubmit}>
 			<Box
 				display="flex"
 				gap={2}
@@ -108,11 +144,11 @@ export default function ContactForm() {
 					variant="outlined"
 					fullWidth
 					required
-					value={values.name}
+					value={values.fullName}
 					onChange={handleInputChange}
 					onBlur={handleBlur}
-					error={touched.name && Boolean(errors.name)}
-					helperText={touched.name && errors.name}
+					error={touched.fullName && Boolean(errors.fullName)}
+					helperText={touched.fullName && errors.fullName}
 					sx={inputStyles}
 				/>
 				<TextField
@@ -187,8 +223,6 @@ export default function ContactForm() {
 				position="top-right"
 				autoClose={4000}
 				hideProgressBar={false}
-				draggable
-				pauseOnHover
 				theme="dark"
 				transition={Bounce}
 			/>
