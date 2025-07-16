@@ -126,6 +126,7 @@ export async function PUT(request) {
 		await fs.writeFile(cvJsonPath, JSON.stringify(cv, null, 2));
 		return NextResponse.json("CV uploaded successfully", { status: 200 });
 	} catch (err) {
+		console.log(err);
 		return NextResponse.json(
 			{ error: "Failed to update CV." },
 			{ status: 500 }
