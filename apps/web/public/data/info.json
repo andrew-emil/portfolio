@@ -1,0 +1,135 @@
+{
+	"portfolioData": {
+		"personalInfo": {
+			"name": "Andrew Emil",
+			"tagline": "Software Developer",
+			"currentRole": "Student at Computer science and Artificial intelligence - Helwan University",
+			"location": "Ain Shams, Cairo, Egypt",
+			"socialLinks": [
+				{
+					"name": "Email",
+					"url": "andrewemil343@gmail.com"
+				},
+				{
+					"name": "Phone",
+					"url": "+201204936350"
+				},
+				{
+					"name": "LinkedIn",
+					"url": "https://www.linkedin.com/in/andrew-emil-0411a7275"
+				},
+				{
+					"name": "GitHub",
+					"url": "https://github.com/andrew-emil"
+				}
+			]
+		},
+		"about": {
+			"title": "About Me",
+			"description": "I am a highly motivated and results-driven software developer with a strong foundation in full-stack web development and mobile app development. I thrive on building impactful applications and solving complex challenges with elegant and efficient code. My expertise includes designing scalable architectures, developing robust APIs, and creating intuitive user interfaces."
+		},
+		"skills": {
+			"title": "Skills",
+			"categories": [
+				{
+					"name": "Programming Languages",
+					"items": ["Java", "JS TS", "Python", "Dart"]
+				},
+				{
+					"name": "Frontend Development",
+					"items": ["React Js", "NextJs", "Flutter", "HTML5", "CSS3"]
+				},
+				{
+					"name": "Backend Development",
+					"items": ["Node js", "Express.js", "Nest.js"]
+				},
+				{
+					"name": "Databases",
+					"items": ["MongoDB", "MySQL", "SQL", "PostgreSQL"]
+				},
+				{
+					"name": "Tools & Technologies",
+					"items": [
+						"Git",
+						"Algorithms",
+						"Problem solving",
+						"Teamwork",
+						"Docker"
+					]
+				}
+			]
+		},
+		"projects": {
+			"title": "My Projects",
+			"list": [
+				{
+					"name": "Surgical Logbook Management System",
+					"description": "Developed a full-stack web app (React.js, Node.js/Express, MongoDB/MySQL) with secure OTP, role-based onboarding and a responsive dashboard for logging surgeries (CPT/ICD coding, anonymized data, voice-to-text notes). Added post-op peer reviews, AI-driven scheduling, analytics dashboards (with PDF/CSV export and audit trails), and multi-institution collaboration.",
+					"technologies": [
+						"React.js",
+						"Node.js",
+						"Express.js",
+						"MongoDB",
+						"MySQL",
+						"Docker"
+					],
+					"githubLink": "https://github.com/andrew-emil/surgery-website",
+					"liveDemoLink": null
+				},
+				{
+					"name": "Seat Stream",
+					"description": "Built a fully responsive cinema reservation web app using Next.js and Express.js with a MySQL backend, featuring an interactive seat-map selector, user authentication using JWT, booking management, and an admin dashboard for schedule and seating control.",
+					"technologies": ["Next.js", "Nest.js", "MySQL", "JWT"],
+					"githubLink": "https://github.com/andrew-emil/Seat-Stream",
+					"liveDemoLink": null
+				},
+				{
+					"name": "QR Code Scanner & Generator App",
+					"description": "Built a cross-platform Flutter application that lets the user scan QR code using the device's camera and generate custom QR codes for URLs or text. Features include real-time decode overlay and a clean Material Design UI with offline support.",
+					"technologies": ["Flutter", "Dart"],
+					"githubLink": "https://github.com/andrew-emil/Qr-code-scanner-and-generator",
+					"liveDemoLink": null
+				},
+				{
+					"name": "Tic Tac Toe (XO Game)",
+					"description": "Built a cross-platform Flutter app with a custom grid-based UI and provider-powered state management, featuring both two-player and single-player modes against an AI driven by Minmax algorithm, fully responsive and performant on mobile devices.",
+					"technologies": ["Flutter", "Dart", "Minmax Algorithm"],
+					"githubLink": "https://github.com/andrew-emil/X-O-game",
+					"liveDemoLink": null
+				}
+			]
+		},
+		"education": {
+			"title": "Education",
+			"list": [
+				{
+					"degree": "Student at Computer science and Artificial intelligence",
+					"institution": "Helwan University",
+					"duration": "2022-2026"
+				},
+				{
+					"degree": "High School",
+					"institution": "Future 10 language school",
+					"duration": "2022"
+				}
+			]
+		},
+		"Experience": {
+			"title": "Experience",
+			"list": [
+				{
+					"title": "Freelance Web Developer",
+					"company": "Self-employed / Khamsat (as a platform)",
+					"duration": "Sep, 2024 - now",
+					"location": "Remote",
+					"details": [
+						"Conducted comprehensive code reviews and successfully deployed client websites on Vercel, ensuring optimal performance and reliability.",
+						"Implemented advanced SEO strategies, significantly improving website visibility and search rankings on Google.",
+						"Designed and developed robust backend APIs, seamlessly integrating MongoDB and SQL databases for scalable data management.",
+						"Engineered full-stack web applications using React and Express, delivering responsive and user-friendly solutions tailored to client needs."
+					]
+				}
+			]
+		}
+	}
+}
