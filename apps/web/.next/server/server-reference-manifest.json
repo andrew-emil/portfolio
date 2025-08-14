@@ -1,1 +1,17 @@
-{"node":{"60c7074648f74d078d620e2b2d607238c18e430435":{"workers":{"app/contact/page":{"moduleId":"6352","async":false}},"layer":{"app/contact/page":"action-browser"}}},"edge":{},"encryptionKey":"5/h9s+IVenlYdIFvEXbxYt9hjqVW+m+czyclYodPRTU="}
+{
+  "node": {
+    "60c7074648f74d078d620e2b2d607238c18e430435": {
+      "workers": {
+        "app/contact/page": {
+          "moduleId": "(action-browser)/../../node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fandrew%2Fprogramming%2Fprojects%2FFullStack%2FPortfolio%2Fapps%2Fweb%2Fapp%2Factions%2FcontactAction.ts%22%2C%5B%7B%22id%22%3A%2260c7074648f74d078d620e2b2d607238c18e430435%22%2C%22exportedName%22%3A%22default%22%7D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/contact/page": "action-browser"
+      }
+    }
+  },
+  "edge": {},
+  "encryptionKey": "5/h9s+IVenlYdIFvEXbxYt9hjqVW+m+czyclYodPRTU="
+}

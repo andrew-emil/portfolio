@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { GlowButton } from "@/components/glow-button";
 import Link from "next/link";
 import type { GetProjectResponseDto } from "@shared/dtos/getProjectResponse.dto";
+import Image from "next/image";
 
 export default async function ProjectDetails({
   params,
@@ -27,9 +28,12 @@ export default async function ProjectDetails({
       <section className="container mx-auto px-4 py-10">
         <div className="grid gap-8 md:grid-cols-[1.1fr_0.9fr]">
           <div>
-            <img
+            <Image
               src={project.thumbnail || "/placeholder.svg"}
               alt={`${project.name} thumbnail`}
+              fill
+              priority
+              quality={90}
               className="aspect-video w-full rounded-xl border border-gray-800 object-cover shadow-[0_18px_40px_rgba(168,85,247,0.18)]"
             />
           </div>

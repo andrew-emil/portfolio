@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { Github, Linkedin, Mail, MessageCircle } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 import info from "../public/data/info.json"
 import { PortfolioData } from "@shared/types/portfolioData.type";
 
@@ -36,7 +37,9 @@ export default async function Page() {
                 speed={80}
                 className="bg-gradient-to-r from-purple-400 via-fuchsia-400 to-purple-400 bg-clip-text text-transparent"
               />
-              <span className="block text-xl text-gray-400 mt-2">{personalInfo.tagline}</span>
+              <span className="block text-xl text-gray-400 mt-2">
+                {personalInfo.tagline}
+              </span>
             </h1>
             <p className="text-gray-300">{about.description}</p>
             <div className="flex gap-3">
@@ -51,11 +54,15 @@ export default async function Page() {
               </Link>
             </div>
           </div>
-          <div className="relative">
-            <img
+          <div className="relative mx-auto aspect-[3/4] w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
+            <Image
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/profile.jpg-hmGseQFnaS2Ch63oJbAEGvCHgq50vn.jpeg"
               alt="Portrait photo"
-              className="mx-auto aspect-[3/4] w-72 rounded-2xl border border-gray-700 object-cover shadow-[0_18px_60px_rgba(168,85,247,0.25)]"
+              fill
+              priority
+              quality={95}
+              className="rounded-2xl border border-gray-700 object-cover shadow-[0_18px_60px_rgba(168,85,247,0.25)]"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
             <div className="pointer-events-none absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-tr from-purple-500/20 to-transparent blur-2xl" />
           </div>
@@ -63,7 +70,9 @@ export default async function Page() {
       </section>
 
       <section className="container mx-auto px-4 pb-20">
-        <h2 className="mb-6 text-2xl font-semibold text-gray-100">{skills.title}</h2>
+        <h2 className="mb-6 text-2xl font-semibold text-gray-100">
+          {skills.title}
+        </h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {skills.categories.map((cat) => (
             <Card
@@ -92,10 +101,12 @@ export default async function Page() {
       {/* Contact Section */}
       <section className="container mx-auto px-4 pb-20">
         <div className="text-center space-y-8">
-          <h2 className="text-2xl font-semibold text-gray-100">Let's Connect</h2>
+          <h2 className="text-2xl font-semibold text-gray-100">
+            Let's Connect
+          </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Feel free to reach out through any of these platforms. I'm always open to discussing new opportunities and
-            interesting projects.
+            Feel free to reach out through any of these platforms. I'm always
+            open to discussing new opportunities and interesting projects.
           </p>
           <div className="flex justify-center gap-6">
             {githubLink && (
@@ -106,7 +117,9 @@ export default async function Page() {
                 className="group flex flex-col items-center gap-3 p-6 rounded-xl border border-gray-800 bg-gray-900/50 backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-purple-500/30 hover:shadow-[0_10px_30px_rgba(168,85,247,0.15)]"
               >
                 <Github className="h-8 w-8 text-gray-400 group-hover:text-purple-400 transition-colors" />
-                <span className="text-sm text-gray-300 group-hover:text-white">GitHub</span>
+                <span className="text-sm text-gray-300 group-hover:text-white">
+                  GitHub
+                </span>
               </Link>
             )}
             {emailLink && (
@@ -115,7 +128,9 @@ export default async function Page() {
                 className="group flex flex-col items-center gap-3 p-6 rounded-xl border border-gray-800 bg-gray-900/50 backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-purple-500/30 hover:shadow-[0_10px_30px_rgba(168,85,247,0.15)]"
               >
                 <Mail className="h-8 w-8 text-gray-400 group-hover:text-purple-400 transition-colors" />
-                <span className="text-sm text-gray-300 group-hover:text-white">Gmail</span>
+                <span className="text-sm text-gray-300 group-hover:text-white">
+                  Gmail
+                </span>
               </Link>
             )}
             {phoneLink && (
@@ -126,7 +141,9 @@ export default async function Page() {
                 className="group flex flex-col items-center gap-3 p-6 rounded-xl border border-gray-800 bg-gray-900/50 backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-purple-500/30 hover:shadow-[0_10px_30px_rgba(168,85,247,0.15)]"
               >
                 <MessageCircle className="h-8 w-8 text-gray-400 group-hover:text-purple-400 transition-colors" />
-                <span className="text-sm text-gray-300 group-hover:text-white">WhatsApp</span>
+                <span className="text-sm text-gray-300 group-hover:text-white">
+                  WhatsApp
+                </span>
               </Link>
             )}
             {linkedinLink && (
@@ -137,7 +154,9 @@ export default async function Page() {
                 className="group flex flex-col items-center gap-3 p-6 rounded-xl border border-gray-800 bg-gray-900/50 backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-purple-500/30 hover:shadow-[0_10px_30px_rgba(168,85,247,0.15)]"
               >
                 <Linkedin className="h-8 w-8 text-gray-400 group-hover:text-purple-400 transition-colors" />
-                <span className="text-sm text-gray-300 group-hover:text-white">LinkedIn</span>
+                <span className="text-sm text-gray-300 group-hover:text-white">
+                  LinkedIn
+                </span>
               </Link>
             )}
           </div>
@@ -146,5 +165,5 @@ export default async function Page() {
 
       <SiteFooter />
     </main>
-  )
+  );
 }
