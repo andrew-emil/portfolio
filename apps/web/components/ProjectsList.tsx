@@ -30,17 +30,17 @@ export default function ProjectsList({
       <Tabs
         value={category}
         onValueChange={(v) => setCategory(v as Category)}
-        className="mb-8"
+        className="mb-6 sm:mb-8"
       >
-        <TabsList className="grid w-full grid-cols-4 bg-gray-900/50 border border-gray-800">
+        <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4 bg-gray-900/50 border border-gray-800 h-auto">
           {["All", "Application", "Web Development", "Backend Development"].map(
             (c) => (
               <TabsTrigger
                 key={c}
                 value={c}
-                className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-fuchsia-600 data-[state=active]:text-white text-gray-300"
+                className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-fuchsia-600 data-[state=active]:text-white text-gray-300 text-xs sm:text-sm py-2 sm:py-2.5 px-2 sm:px-3"
               >
-                {c}
+                <span className="truncate">{c}</span>
               </TabsTrigger>
             )
           )}

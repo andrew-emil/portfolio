@@ -26,10 +26,12 @@ export default async function EducationPage() {
   return (
     <main className="min-h-screen bg-gray-950 text-gray-100">
       <SiteHeader />
-      <section className="container mx-auto px-4 py-10">
-        <h1 className="mb-8 text-3xl font-bold text-gray-100">Education</h1>
-        <Timeline items={eduItems} className="mb-12" />
-        <h2 className="mb-6 text-2xl font-semibold text-gray-100">
+      <section className="container mx-auto px-3 sm:px-4 py-6 sm:py-8 lg:py-10">
+        <h1 className="mb-6 sm:mb-8 text-2xl sm:text-3xl font-bold text-gray-100">
+          Education
+        </h1>
+        <Timeline items={eduItems} className="mb-8 sm:mb-12" />
+        <h2 className="mb-4 sm:mb-6 text-xl sm:text-2xl font-semibold text-gray-100">
           Experience
         </h2>
         <Timeline items={expItems} />

@@ -1,21 +1,22 @@
 import ProjectsList from "@/components/ProjectsList";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { GetAllProjectsResponseDto } from "@shared/dtos/getAllProjectsResponse.dto";
+import { getProjects } from "../apiCalls/projectApis";
 
 export default async function ProjectsPage() {
-  const res = await fetch(`${process.env.API_URL}/projects`);
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch projects");
-  }
-
-  const projects = await res.json() as GetAllProjectsResponseDto[];
+  const projects = await getProjects();
 
   return (
     <main className="min-h-screen bg-gray-950 text-gray-100">
       <SiteHeader />
-      <ProjectsList projects={projects} />
+      <section className="container mx-auto px-3 sm:px-4 py-6 sm:py-8 lg:py-10">
+        <div className="mb-6 sm:mb-8 flex items-center justify-between">
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-100">
+            Projects
+          </h1>
+        </div>
+        <ProjectsList projects={projects} />
+      </section>
       <SiteFooter />
     </main>
   );

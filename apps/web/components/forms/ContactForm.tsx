@@ -24,7 +24,7 @@ function ContactForm() {
     return (
         <form
             action={formAction}
-            className="mx-auto max-w-2xl space-y-5 rounded-xl border border-gray-800 bg-gray-900/50 p-6 shadow-sm backdrop-blur-sm"
+            className="mx-auto max-w-2xl space-y-4 sm:space-y-5 rounded-xl border border-gray-800 bg-gray-900/50 p-4 sm:p-6 shadow-sm backdrop-blur-sm"
         >
             {/* Full Name */}
             <div className="grid gap-1">

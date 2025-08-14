@@ -1,10 +1,13 @@
-import type { Metadata } from 'next'
-import { GeistSans } from 'geist/font/sans'
-import { GeistMono } from 'geist/font/mono'
-import './globals.css'
+import type { Metadata } from "next";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Andrew Emil | Full-Stack Developer Portfolio",
+  icons: {
+    icon: "/logo.png",
+  },
   description:
     "Portfolio of Andrew Emil — Full-Stack Developer specializing in Next.js, React, Node.js, and modern web technologies. View my projects, skills, and contact information.",
   generator: "Next.js",
@@ -50,16 +53,13 @@ export const metadata: Metadata = {
     images: ["/og-image.jpg"],
     creator: "@yourTwitterHandle",
   },
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-  },
+  
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -74,5 +74,5 @@ html {
       </head>
       <body>{children}</body>
     </html>
-  )
+  );
 }
