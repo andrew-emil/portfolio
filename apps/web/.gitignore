@@ -1,5 +1,10 @@
 .next/
 .env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
 
 node_modules/
 .DS_Store
@@ -7,3 +12,8 @@ npm-debug.log
 .vercel/
 .vscode/
 dist/
+
+/apps/web/.env/
+/apps/web/.next/
+
+.*

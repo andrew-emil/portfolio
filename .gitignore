@@ -2,6 +2,6 @@ node_modules
 dist
 .vscode
 
-/apps/web/.env/
-/apps/web/.next/
-/.vercel
+apps/web/.env
+apps/web/.next
+apps/web/node_modules
