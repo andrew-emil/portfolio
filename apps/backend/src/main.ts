@@ -18,13 +18,23 @@ async function bootstrap() {
   );
 
   app.enableCors({
-    origin: [
-      process.env.FRONTEND_URL,
-      process.env.FRONTEND_URL_2,
-    ],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
+    origin: (origin: any, callback:any) => {
+      const allowed = [
+        'https://portfolio-web-az8u.vercel.app',
+        'https://portfolio-web-az8u-gklgu757m-andrews-projects-284f4980.vercel.app',
+      ];
+      if (!origin || allowed.includes(origin) || /\.vercel\.app$/.test(origin)) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+        callback(null, true);
+      } else {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
   });
+
 
   app.setGlobalPrefix("api");
 
