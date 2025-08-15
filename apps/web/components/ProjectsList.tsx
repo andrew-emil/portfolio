@@ -13,7 +13,6 @@ export default function ProjectsList({
 }: {
   projects: GetAllProjectsResponseDto[];
 }) {
-  console.log(projects);
   const [category, setCategory] = useState<Category>("All");
 
   const filtered = useMemo(() => {
