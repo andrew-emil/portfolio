@@ -8,11 +8,14 @@ export const appConfigSchema = {
     DB_HOST: Joi.string()
         .required()
         .description("The MongoDB connection string for the database"),
+    SECRET_KEY: Joi.string()
+            .required(),
 };
 
 const appConfig = registerAs("app", () => ({
     DB_NAME: process.env.DB_NAME,
     DB_HOST: process.env.DB_HOST,
+    SECRET_KEY: process.env.SECRET_KEY,
     validate: (config: Record<string, any>) => {
         const { error } = Joi.object(appConfigSchema).validate(config, {
             abortEarly: false,
