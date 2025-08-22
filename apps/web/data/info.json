@@ -33,28 +33,120 @@
 			"categories": [
 				{
 					"name": "Programming Languages",
-					"items": ["Java", "JS TS", "Python", "Dart"]
+					"icon": "Code2",
+					"items": [
+						{
+							"name": "Java",
+							"icon": "Coffee"
+						},
+						{
+							"name": "JavaScript",
+							"icon": "FileText"
+						},
+						{
+							"name": "TypeScript",
+							"icon": "FileCode"
+						},
+						{
+							"name": "Python",
+							"icon": "Bot"
+						},
+						{
+							"name": "Dart",
+							"icon": "Zap"
+						}
+					]
 				},
 				{
 					"name": "Frontend Development",
-					"items": ["React Js", "NextJs", "Flutter", "HTML5", "CSS3"]
+					"icon": "Monitor",
+					"items": [
+						{
+							"name": "React.js",
+							"icon": "Atom"
+						},
+						{
+							"name": "Next.js",
+							"icon": "Triangle"
+						},
+						{
+							"name": "Flutter",
+							"icon": "Smartphone"
+						},
+						{
+							"name": "HTML5",
+							"icon": "FileText"
+						},
+						{
+							"name": "CSS3",
+							"icon": "Palette"
+						}
+					]
 				},
 				{
 					"name": "Backend Development",
-					"items": ["Node js", "Express.js", "Nest.js"]
+					"icon": "Server",
+					"items": [
+						{
+							"name": "Node.js",
+							"icon": "Hexagon"
+						},
+						{
+							"name": "Express.js",
+							"icon": "Zap"
+						},
+						{
+							"name": "Nest.js",
+							"icon": "Shield"
+						}
+					]
 				},
 				{
 					"name": "Databases",
-					"items": ["MongoDB", "MySQL", "SQL", "PostgreSQL"]
+					"icon": "Database",
+					"items": [
+						{
+							"name": "MongoDB",
+							"icon": "Leaf"
+						},
+						{
+							"name": "MySQL",
+							"icon": "Database"
+						},
+						{
+							"name": "SQL",
+							"icon": "Table"
+						},
+						{
+							"name": "PostgreSQL",
+							"icon": "Cylinder"
+						}
+					]
 				},
 				{
 					"name": "Tools & Technologies",
+					"icon": "Wrench",
 					"items": [
-						"Git",
-						"Algorithms",
-						"Problem solving",
-						"Teamwork",
-						"Docker"
+						{
+							"name": "Git",
+							"icon": "GitBranch"
+						},
+						{
+							"name": "Algorithms",
+							"icon": "Binary"
+						},
+						{
+							"name": "Problem solving",
+							"icon": "Puzzle"
+						},
+						{
+							"name": "Teamwork",
+							"icon": "Users"
+						},
+						{
+							"name": "Docker",
+							"icon": "Container"
+						}
 					]
 				}
 			]

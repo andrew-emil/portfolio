@@ -1,6 +1,7 @@
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import ContactForm from "@/components/forms/ContactForm";
+import { GlassCard } from "@/components/glass-card";
 
 export default function ContactPage() {
   return (
@@ -10,7 +11,9 @@ export default function ContactPage() {
         <h1 className="mb-6 sm:mb-8 text-2xl sm:text-3xl font-bold text-gray-100">
           Contact
         </h1>
-        <ContactForm />
+        <GlassCard className="mx-auto max-w-2xl p-4 sm:p-6" hover={false}>
+          <ContactForm />
+        </GlassCard>
       </section>
       <SiteFooter />
     </main>

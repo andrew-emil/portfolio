@@ -20,7 +20,7 @@ export function GlowButton({ className, asChild = false, loading = false, childr
       disabled={disabled || loading}
       {...props}
       className={cn(
-        "group relative overflow-hidden transition-all duration-300",
+        "group relative overflow-hidden transition-all duration-300 cursor-pointer",
         "bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white",
         "hover:from-purple-500 hover:via-fuchsia-500 hover:to-pink-500",
         "shadow-[0_0_0_rgba(0,0,0,0)] hover:shadow-[0_0_30px_rgba(168,85,247,0.8)]",

@@ -1,14 +1,15 @@
+import { GlassCard } from "@/components/glass-card"
 import { GlowButton } from "@/components/glow-button"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
+import { SkillIcon } from "@/components/skill-icon"
 import { TypingText } from "@/components/typing-text"
 import { Badge } from "@/components/ui/badge"
-import { Card, CardContent } from "@/components/ui/card"
+import { PortfolioData } from "@shared/types/portfolioData.type"
 import { Github, Linkedin, Mail, MessageCircle } from "lucide-react"
-import Link from "next/link"
 import Image from "next/image"
+import Link from "next/link"
 import info from "../public/data/info.json"
-import { PortfolioData } from "@shared/types/portfolioData.type";
 
 export default async function Page() {
   const data: PortfolioData = info.portfolioData;
@@ -78,27 +79,28 @@ export default async function Page() {
         </h2>
         <div className="grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
           {skills.categories.map((cat) => (
-            <Card
-              key={cat.name}
-              className="border-gray-800 bg-gray-900/50 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-purple-500/30 hover:shadow-[0_10px_30px_rgba(168,85,247,0.15)]"
-            >
-              <CardContent className="space-y-3 p-4 sm:p-5">
-                <h3 className="font-medium text-gray-100 text-sm sm:text-base">
-                  {cat.name}
-                </h3>
-                <div className="flex flex-wrap gap-1.5 sm:gap-2">
+            <GlassCard key={cat.name} className="p-4 sm:p-6">
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 rounded-lg bg-purple-500/20 backdrop-blur-sm">
+                    <SkillIcon iconName={cat.icon} className="h-5 w-5 text-purple-400" />
+                  </div>
+                  <h3 className="font-semibold text-gray-100 text-sm sm:text-base">{cat.name}</h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
                   {cat.items.map((item) => (
                     <Badge
-                      key={item}
+                      key={typeof item === "string" ? item : item.name}
                       variant="secondary"
-                      className="border border-purple-500/20 bg-purple-950/30 text-purple-300 hover:bg-purple-900/40 text-xs"
+                      className="border border-purple-500/20 bg-white/5 backdrop-blur-sm text-purple-300 hover:bg-white/10 text-xs flex items-center gap-1.5"
                     >
-                      {item}
+                      {typeof item === "object" && item.icon && <SkillIcon iconName={item.icon} className="h-3 w-3" />}
+                      {typeof item === "string" ? item : item.name}
                     </Badge>
                   ))}
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </GlassCard>
           ))}
         </div>
       </section>
@@ -115,53 +117,35 @@ export default async function Page() {
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 max-w-2xl mx-auto">
             {githubLink && (
-              <a
-                href={githubLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-col items-center gap-2 sm:gap-3 p-4 sm:p-6 rounded-xl border border-gray-800 bg-gray-900/50 backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-purple-500/30 hover:shadow-[0_10px_30px_rgba(168,85,247,0.15)]"
-              >
-                <Github className="h-6 w-6 sm:h-8 sm:w-8 text-gray-400 group-hover:text-purple-400 transition-colors" />
-                <span className="text-xs sm:text-sm text-gray-300 group-hover:text-white">
-                  GitHub
-                </span>
+              <a href={githubLink} target="_blank" rel="noopener noreferrer">
+                <GlassCard className="p-4 sm:p-6 text-center group">
+                  <Github className="h-6 w-6 sm:h-8 sm:w-8 text-gray-400 group-hover:text-purple-400 transition-colors mx-auto mb-2 sm:mb-3" />
+                  <span className="text-xs sm:text-sm text-gray-300 group-hover:text-white">GitHub</span>
+                </GlassCard>
               </a>
             )}
             {emailLink && (
-              <a
-                href={`mailto:${emailLink}`}
-                className="group flex flex-col items-center gap-2 sm:gap-3 p-4 sm:p-6 rounded-xl border border-gray-800 bg-gray-900/50 backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-purple-500/30 hover:shadow-[0_10px_30px_rgba(168,85,247,0.15)]"
-              >
-                <Mail className="h-6 w-6 sm:h-8 sm:w-8 text-gray-400 group-hover:text-purple-400 transition-colors" />
-                <span className="text-xs sm:text-sm text-gray-300 group-hover:text-white">
-                  Gmail
-                </span>
+              <a href={`mailto:${emailLink}`}>
+                <GlassCard className="p-4 sm:p-6 text-center group">
+                  <Mail className="h-6 w-6 sm:h-8 sm:w-8 text-gray-400 group-hover:text-purple-400 transition-colors mx-auto mb-2 sm:mb-3" />
+                  <span className="text-xs sm:text-sm text-gray-300 group-hover:text-white">Gmail</span>
+                </GlassCard>
               </a>
             )}
             {phoneLink && (
-              <a
-                href={`https://wa.me/${phoneLink.replace(/[^0-9]/g, "")}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-col items-center gap-2 sm:gap-3 p-4 sm:p-6 rounded-xl border border-gray-800 bg-gray-900/50 backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-purple-500/30 hover:shadow-[0_10px_30px_rgba(168,85,247,0.15)]"
-              >
-                <MessageCircle className="h-6 w-6 sm:h-8 sm:w-8 text-gray-400 group-hover:text-purple-400 transition-colors" />
-                <span className="text-xs sm:text-sm text-gray-300 group-hover:text-white">
-                  WhatsApp
-                </span>
+              <a href={`https://wa.me/${phoneLink.replace(/[^0-9]/g, "")}`} target="_blank" rel="noopener noreferrer">
+                <GlassCard className="p-4 sm:p-6 text-center group">
+                  <MessageCircle className="h-6 w-6 sm:h-8 sm:w-8 text-gray-400 group-hover:text-purple-400 transition-colors mx-auto mb-2 sm:mb-3" />
+                  <span className="text-xs sm:text-sm text-gray-300 group-hover:text-white">WhatsApp</span>
+                </GlassCard>
               </a>
             )}
             {linkedinLink && (
-              <a
-                href={linkedinLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-col items-center gap-2 sm:gap-3 p-4 sm:p-6 rounded-xl border border-gray-800 bg-gray-900/50 backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-purple-500/30 hover:shadow-[0_10px_30px_rgba(168,85,247,0.15)]"
-              >
-                <Linkedin className="h-6 w-6 sm:h-8 sm:w-8 text-gray-400 group-hover:text-purple-400 transition-colors" />
-                <span className="text-xs sm:text-sm text-gray-300 group-hover:text-white">
-                  LinkedIn
-                </span>
+              <a href={linkedinLink} target="_blank" rel="noopener noreferrer">
+                <GlassCard className="p-4 sm:p-6 text-center group">
+                  <Linkedin className="h-6 w-6 sm:h-8 sm:w-8 text-gray-400 group-hover:text-purple-400 transition-colors mx-auto mb-2 sm:mb-3" />
+                  <span className="text-xs sm:text-sm text-gray-300 group-hover:text-white">LinkedIn</span>
+                </GlassCard>
               </a>
             )}
           </div>

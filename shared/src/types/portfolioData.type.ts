@@ -1,4 +1,3 @@
-import { Project } from "./project.type"
 import { SocialLink } from "./socialLink.type"
 
 export type PortfolioData = {
@@ -10,8 +9,14 @@ export type PortfolioData = {
         socialLinks: SocialLink[]
     }
     about: { title: string; description: string }
-    skills: { title: string; categories: { name: string; items: string[] }[] }
-    projects: { title: string; list: Project[] }
+    skills: {
+        title: string
+        categories: {
+            name: string
+            icon: string
+            items: { name: string; icon?: string }[]
+        }[]
+    }
     education: { title: string; list: { degree: string; institution: string; duration: string }[] }
     Experience?: {
         title: string

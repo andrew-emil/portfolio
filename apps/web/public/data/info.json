@@ -33,69 +33,121 @@
 			"categories": [
 				{
 					"name": "Programming Languages",
-					"items": ["Java", "JS TS", "Python", "Dart"]
+					"icon": "Code2",
+					"items": [
+						{
+							"name": "Java",
+							"icon": "Coffee"
+						},
+						{
+							"name": "JavaScript",
+							"icon": "FileText"
+						},
+						{
+							"name": "TypeScript",
+							"icon": "FileCode"
+						},
+						{
+							"name": "Python",
+							"icon": "Bot"
+						},
+						{
+							"name": "Dart",
+							"icon": "Zap"
+						}
+					]
 				},
 				{
 					"name": "Frontend Development",
-					"items": ["React Js", "NextJs", "Flutter", "HTML5", "CSS3"]
+					"icon": "Monitor",
+					"items": [
+						{
+							"name": "React.js",
+							"icon": "Atom"
+						},
+						{
+							"name": "Next.js",
+							"icon": "Triangle"
+						},
+						{
+							"name": "Flutter",
+							"icon": "Smartphone"
+						},
+						{
+							"name": "HTML5",
+							"icon": "FileText"
+						},
+						{
+							"name": "CSS3",
+							"icon": "Palette"
+						}
+					]
 				},
 				{
 					"name": "Backend Development",
-					"items": ["Node js", "Express.js", "Nest.js"]
+					"icon": "Server",
+					"items": [
+						{
+							"name": "Node.js",
+							"icon": "Hexagon"
+						},
+						{
+							"name": "Express.js",
+							"icon": "Zap"
+						},
+						{
+							"name": "Nest.js",
+							"icon": "Shield"
+						}
+					]
 				},
 				{
 					"name": "Databases",
-					"items": ["MongoDB", "MySQL", "SQL", "PostgreSQL"]
+					"icon": "Database",
+					"items": [
+						{
+							"name": "MongoDB",
+							"icon": "Leaf"
+						},
+						{
+							"name": "MySQL",
+							"icon": "Database"
+						},
+						{
+							"name": "SQL",
+							"icon": "Table"
+						},
+						{
+							"name": "PostgreSQL",
+							"icon": "Cylinder"
+						}
+					]
 				},
 				{
 					"name": "Tools & Technologies",
+					"icon": "Wrench",
 					"items": [
-						"Git",
-						"Algorithms",
-						"Problem solving",
-						"Teamwork",
-						"Docker"
+						{
+							"name": "Git",
+							"icon": "GitBranch"
+						},
+						{
+							"name": "Algorithms",
+							"icon": "Binary"
+						},
+						{
+							"name": "Problem solving",
+							"icon": "Puzzle"
+						},
+						{
+							"name": "Teamwork",
+							"icon": "Users"
+						},
+						{
+							"name": "Docker",
+							"icon": "Container"
+						}
 					]
-				}
-			]
-		},
-		"projects": {
-			"title": "My Projects",
-			"list": [
-				{
-					"name": "Surgical Logbook Management System",
-					"description": "Developed a full-stack web app (React.js, Node.js/Express, MongoDB/MySQL) with secure OTP, role-based onboarding and a responsive dashboard for logging surgeries (CPT/ICD coding, anonymized data, voice-to-text notes). Added post-op peer reviews, AI-driven scheduling, analytics dashboards (with PDF/CSV export and audit trails), and multi-institution collaboration.",
-					"technologies": [
-						"React.js",
-						"Node.js",
-						"Express.js",
-						"MongoDB",
-						"MySQL",
-						"Docker"
-					],
-					"githubLink": "https://github.com/andrew-emil/surgery-website",
-					"liveDemoLink": null
-				},
-				{
-					"name": "Seat Stream",
-					"description": "Built a fully responsive cinema reservation web app using Next.js and Express.js with a MySQL backend, featuring an interactive seat-map selector, user authentication using JWT, booking management, and an admin dashboard for schedule and seating control.",
-					"technologies": ["Next.js", "Nest.js", "MySQL", "JWT"],
-					"githubLink": "https://github.com/andrew-emil/Seat-Stream",
-					"liveDemoLink": null
-				},
-				{
-					"name": "QR Code Scanner & Generator App",
-					"description": "Built a cross-platform Flutter application that lets the user scan QR code using the device's camera and generate custom QR codes for URLs or text. Features include real-time decode overlay and a clean Material Design UI with offline support.",
-					"technologies": ["Flutter", "Dart"],
-					"githubLink": "https://github.com/andrew-emil/Qr-code-scanner-and-generator",
-					"liveDemoLink": null
-				},
-				{
-					"name": "Tic Tac Toe (XO Game)",
-					"description": "Built a cross-platform Flutter app with a custom grid-based UI and provider-powered state management, featuring both two-player and single-player modes against an AI driven by Minmax algorithm, fully responsive and performant on mobile devices.",
-					"technologies": ["Flutter", "Dart", "Minmax Algorithm"],
-					"githubLink": "https://github.com/andrew-emil/X-O-game",
-					"liveDemoLink": null
 				}
 			]
 		},

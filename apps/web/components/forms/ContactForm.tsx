@@ -24,11 +24,11 @@ function ContactForm() {
     return (
         <form
             action={formAction}
-            className="mx-auto max-w-2xl space-y-4 sm:space-y-5 rounded-xl border border-gray-800 bg-gray-900/50 p-4 sm:p-6 shadow-sm backdrop-blur-sm"
+            className="space-y-4 sm:space-y-5"
         >
             {/* Full Name */}
-            <div className="grid gap-1">
-                <Label htmlFor="fullname" className="text-gray-200">
+            <div className="grid gap-2">
+                <Label htmlFor="fullname" className="text-gray-200 text-sm">
                     Full name
                 </Label>
                 <Input
@@ -36,7 +36,7 @@ function ContactForm() {
                     name="fullname"
                     placeholder="Your full name"
                     required
-                    className="border-gray-700 bg-gray-800/50 text-gray-100 placeholder:text-gray-400 focus:border-purple-500"
+                    className="border-white/10 bg-white/5 backdrop-blur-sm text-gray-100 placeholder:text-gray-400 focus:border-purple-500/50 focus:bg-white/10 text-sm sm:text-base"
                 />
                 {state?.errors?.fullname && (
                     <p className="text-sm text-red-400">{state.errors.fullname}</p>
@@ -44,17 +44,16 @@ function ContactForm() {
             </div>
 
             {/* Email */}
-            <div className="grid gap-1">
-                <Label htmlFor="email" className="text-gray-200">
+            <div className="grid gap-2">
+                <Label htmlFor="fullname" className="text-gray-200 text-sm">
                     Email
                 </Label>
                 <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="you@example.com"
+                    id="fullname"
+                    name="fullname"
+                    placeholder="Your full name"
                     required
-                    className="border-gray-700 bg-gray-800/50 text-gray-100 placeholder:text-gray-400 focus:border-purple-500"
+                    className="border-white/10 bg-white/5 backdrop-blur-sm text-gray-100 placeholder:text-gray-400 focus:border-purple-500/50 focus:bg-white/10 text-sm sm:text-base"
                 />
                 {state?.errors?.email && (
                     <p className="text-sm text-red-400">{state.errors.email}</p>
@@ -62,16 +61,17 @@ function ContactForm() {
             </div>
 
             {/* Subject */}
-            <div className="grid gap-1">
-                <Label htmlFor="subject" className="text-gray-200">
+            <div className="grid gap-2">
+                <Label htmlFor="email" className="text-gray-200 text-sm">
                     Subject
                 </Label>
                 <Input
-                    id="subject"
-                    name="subject"
-                    placeholder="How can I help?"
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="you@example.com"
                     required
-                    className="border-gray-700 bg-gray-800/50 text-gray-100 placeholder:text-gray-400 focus:border-purple-500"
+                    className="border-white/10 bg-white/5 backdrop-blur-sm text-gray-100 placeholder:text-gray-400 focus:border-purple-500/50 focus:bg-white/10 text-sm sm:text-base"
                 />
                 {state?.errors?.subject && (
                     <p className="text-sm text-red-400">{state.errors.subject}</p>
@@ -79,8 +79,8 @@ function ContactForm() {
             </div>
 
             {/* Message */}
-            <div className="grid gap-1">
-                <Label htmlFor="message" className="text-gray-200">
+            <div className="grid gap-2">
+                <Label htmlFor="message" className="text-gray-200 text-sm">
                     Message
                 </Label>
                 <Textarea
@@ -88,7 +88,7 @@ function ContactForm() {
                     name="message"
                     placeholder="Write your message..."
                     required
-                    className="border-gray-700 bg-gray-800/50 text-gray-100 placeholder:text-gray-400 focus:border-purple-500 min-h-[120px]"
+                    className="border-white/10 bg-white/5 backdrop-blur-sm text-gray-100 placeholder:text-gray-400 focus:border-purple-500/50 focus:bg-white/10 min-h-[100px] sm:min-h-[120px] text-sm sm:text-base resize-none"
                 />
                 {state?.errors?.message && (
                     <p className="text-sm text-red-400">{state.errors.message}</p>
