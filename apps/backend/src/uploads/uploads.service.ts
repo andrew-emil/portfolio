@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Upload } from './entities/upload.entity';
@@ -37,6 +37,17 @@ export class UploadsService {
   }
 
   async findOne() {
-    return await this.uploadModel.findOne().exec();
+    const cv = await this.uploadModel.findOne().exec();
+    if (!cv) {
+      return null;
+    }
+    const cloudinaryUrl = cv?.secureUrl
+    const response = await fetch(cloudinaryUrl);
+
+    if (!response.ok || !response.body) {
+      throw new InternalServerErrorException("Failed to fetch file from Cloudinary");
+    }
+
+    return response.body
   }
 }

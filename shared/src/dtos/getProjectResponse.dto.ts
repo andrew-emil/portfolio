@@ -12,7 +12,7 @@ export class GetProjectResponseDto extends GetAllProjectsResponseDto {
     technologies!: string[];
 
     @IsString()
-    githubLink?: string;
+    repositoryUrl?: string;
 
     @IsString()
     liveDemo?: string;

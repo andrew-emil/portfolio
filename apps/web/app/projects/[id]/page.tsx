@@ -71,9 +71,9 @@ export default async function ProjectDetails({
             </div>
             <div className="flex flex-col sm:flex-row gap-3 pt-4">
               <div className="flex gap-3">
-                {project.githubLink ? (
+                {project.repositoryUrl ? (
                   <GlowButton asChild>
-                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                    <a href={project.repositoryUrl} target="_blank" rel="noopener noreferrer">
                       View Code
                     </a>
                   </GlowButton>
