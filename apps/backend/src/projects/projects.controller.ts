@@ -13,7 +13,6 @@ export class ProjectsController {
   @UseInterceptors(FileInterceptor('thumbnail'))
   create(@Body() createProjectDto: CreateProjectDto, @UploadedFile() thumbnail: Express.Multer.File) {
     if (!thumbnail) throw new BadRequestException('Thumbnail is required');
-
     createProjectDto.thumbnail = thumbnail.buffer;
     return this.projectsService.create(createProjectDto);
   }

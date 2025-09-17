@@ -16,6 +16,7 @@ async function bootstrap() {
       },
     })
   );
+  
 
   app.enableCors({
     origin: (origin: any, callback:any) => {

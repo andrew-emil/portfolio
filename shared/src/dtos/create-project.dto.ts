@@ -4,7 +4,8 @@ import {
     IsEnum,
     IsNotEmpty,
     IsOptional,
-    IsString
+    IsString,
+    IsUrl
 } from "class-validator";
 import { ProjectCategory } from "../enums/projectCategory.enum";
 
@@ -27,11 +28,11 @@ export class CreateProjectDto {
     technologies!: string[];
 
     @IsOptional()
-    @IsString()
+    @IsUrl({}, { message: 'repositoryUrl must be a valid URL' })
     repositoryUrl?: string;
 
     @IsOptional()
-    @IsString()
+    @IsUrl({}, { message: 'liveUrl must be a valid URL' })
     liveUrl?: string;
 
     @IsOptional()

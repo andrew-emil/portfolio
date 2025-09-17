@@ -13,7 +13,9 @@ export async function getProjectIds() {
 }
 
 export async function getProjects() {
-    const res = await fetch(`${process.env.API_URL}/projects`);
+    const res = await fetch(`${process.env.API_URL}/projects`, {
+        next: { revalidate: 3600 },
+    });
 
     if (!res.ok) {
         throw new Error("Failed to fetch projects");
