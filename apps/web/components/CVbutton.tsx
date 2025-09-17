@@ -13,7 +13,7 @@ function CVbutton({ apiUrl }: { apiUrl: string }) {
                 throw new Error("API URL is not defined");
             }
             setLoading(true);
-            window.open(`http://localhost:4000/api/uploads`, "_blank");
+            window.open(`${apiUrl}/uploads`, "_blank");
         } catch (error) {
             console.error("Download failed:", error);
             alert("Failed to download file");
