@@ -62,14 +62,14 @@ function ContactForm() {
 
             {/* Subject */}
             <div className="grid gap-2">
-                <Label htmlFor="email" className="text-gray-200 text-sm">
+                <Label htmlFor="subject" className="text-gray-200 text-sm">
                     Subject
                 </Label>
                 <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="you@example.com"
+                    id="subject"
+                    name="subject"
+                    type="subject"
+                    placeholder="Subject"
                     required
                     className="border-white/10 bg-white/5 backdrop-blur-sm text-gray-100 placeholder:text-gray-400 focus:border-purple-500/50 focus:bg-white/10 text-sm sm:text-base"
                 />
