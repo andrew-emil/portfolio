@@ -2,6 +2,8 @@
 
 import { GetAllProjectsResponseDto } from "@shared/dtos/getAllProjectsResponse.dto";
 
+const apiUrl = process.env.API_URL;
+
 export async function getProjectIds() {
     const projects = await getProjects();
     const ids = projects.map((project) => project._id);
@@ -13,7 +15,7 @@ export async function getProjectIds() {
 }
 
 export async function getProjects() {
-    const res = await fetch(`${process.env.API_URL}/projects`, {
+    const res = await fetch(`${apiUrl}/projects`, {
         next: { revalidate: 3600 },
     });
 
@@ -26,7 +28,7 @@ export async function getProjects() {
 }
 
 export async function getProjectById(id: string) {
-    const res = await fetch(`${process.env.API_URL}/projects/${id}`, {
+    const res = await fetch(`${apiUrl}/projects/${id}`, {
         next: { revalidate: 60 },
     });
 

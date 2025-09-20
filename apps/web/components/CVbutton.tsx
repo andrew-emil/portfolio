@@ -21,6 +21,7 @@ function CVbutton({ apiUrl }: { apiUrl: string }) {
             setLoading(false);
         }
     };
+
     return (
         <GlowButton
             type="button"

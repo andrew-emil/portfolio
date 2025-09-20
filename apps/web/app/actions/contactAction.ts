@@ -27,7 +27,6 @@ export default async function ContactAction(prevData: any, data: FormData) {
             if (['fullname', 'email', 'subject', 'message'].includes(field)) {
                 errors[field] = issue.message;
             } else {
-                // If it's not tied to a known field, treat it as a general error
                 errors.general = issue.message;
             }
         });
@@ -41,7 +40,6 @@ export default async function ContactAction(prevData: any, data: FormData) {
         headers: { 'Content-Type': 'application/json' }
     });
 
-    
     if (!res.ok) {
         const errorData = await res.json();
         console.log('Error response:', errorData);

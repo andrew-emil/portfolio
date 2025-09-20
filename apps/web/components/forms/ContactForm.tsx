@@ -45,13 +45,14 @@ function ContactForm() {
 
             {/* Email */}
             <div className="grid gap-2">
-                <Label htmlFor="fullname" className="text-gray-200 text-sm">
+                <Label htmlFor="email" className="text-gray-200 text-sm">
                     Email
                 </Label>
                 <Input
-                    id="fullname"
-                    name="fullname"
-                    placeholder="Your full name"
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="Your Email"
                     required
                     className="border-white/10 bg-white/5 backdrop-blur-sm text-gray-100 placeholder:text-gray-400 focus:border-purple-500/50 focus:bg-white/10 text-sm sm:text-base"
                 />
@@ -66,10 +67,10 @@ function ContactForm() {
                     Subject
                 </Label>
                 <Input
-                    id="subject"
-                    name="subject"
-                    type="subject"
-                    placeholder="Subject"
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="you@example.com"
                     required
                     className="border-white/10 bg-white/5 backdrop-blur-sm text-gray-100 placeholder:text-gray-400 focus:border-purple-500/50 focus:bg-white/10 text-sm sm:text-base"
                 />
