@@ -1,6 +1,4 @@
 import CVbutton from "@/components/CVbutton";
-import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
 import { Timeline } from "@/components/timeline";
 import info from "@/public/data/info.json";
 import { PortfolioData } from "@shared/types/portfolioData.type";
@@ -25,8 +23,7 @@ export default async function EducationPage() {
     })) ?? [];
 
   return (
-    <main className="min-h-screen bg-gray-950 text-gray-100">
-      <SiteHeader />
+    <>
       <section className="container mx-auto px-3 sm:px-4 py-6 sm:py-8 lg:py-10">
         <div className="space-y-12 sm:space-y-16">
           {/* Education Section */}
@@ -64,10 +61,7 @@ export default async function EducationPage() {
           )}
         </div>
       </section>
-
       <CVbutton apiUrl={apiUrl || ""} />
-
-      <SiteFooter />
-    </main>
+    </>
   )
 }

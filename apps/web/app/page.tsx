@@ -1,7 +1,5 @@
 import { GlassCard } from "@/components/glass-card"
 import { GlowButton } from "@/components/glow-button"
-import { SiteFooter } from "@/components/site-footer"
-import { SiteHeader } from "@/components/site-header"
 import { SkillIcon } from "@/components/skill-icon"
 import { TypingText } from "@/components/typing-text"
 import { Badge } from "@/components/ui/badge"
@@ -22,8 +20,7 @@ export default async function Page() {
   const phoneLink = personalInfo.socialLinks.find((link) => link.name === "Phone")?.url
 
   return (
-    <main className="min-h-screen bg-gray-950 text-gray-100">
-      <SiteHeader />
+    <>
       <section className="relative">
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-purple-950/20 via-gray-950 to-gray-950" />
         <div className="container mx-auto grid items-center gap-6 sm:gap-8 lg:gap-10 px-3 sm:px-4 pb-12 sm:pb-16 lg:pb-20 pt-8 sm:pt-10 lg:pt-12 grid-cols-1 lg:grid-cols-2">
@@ -151,8 +148,6 @@ export default async function Page() {
           </div>
         </div>
       </section>
-
-      <SiteFooter />
-    </main>
-  );
+    </>
+  )
 }

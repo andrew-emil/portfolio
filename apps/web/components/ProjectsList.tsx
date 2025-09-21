@@ -47,9 +47,15 @@ export default function ProjectsList({
       </Tabs>
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {filtered.map((p) => (
-          <ProjectCard project={p} key={p._id} />
-        ))}
+        {filtered.length === 0 ? (
+          <div className="col-span-full flex min-h-[200px] flex-col items-center justify-center text-center">
+            <p className="text-lg font-semibold text-gray-400">No projects found in "{category}"</p>
+          </div>
+        ) :
+          filtered.map((p) => (
+            <ProjectCard project={p} key={p._id} />
+          ))
+        }
       </div>
     </section>
   );
